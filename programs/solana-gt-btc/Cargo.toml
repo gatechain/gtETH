@@ -1,0 +1,27 @@
+[package]
+name = "solana-gt-btc"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "solana_gt_btc"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"]}
+anchor-spl = { version = "0.31.1", features = ["token"] }
+proc-macro2 = "1.0.95" 
+spl-token = "=8.0.0"
+mpl-token-metadata = { version = "5.1.0" }
+syn = "1.0"
+quote = "1.0"
+# cargo update -p proc-macro2 --precise 1.0.95
